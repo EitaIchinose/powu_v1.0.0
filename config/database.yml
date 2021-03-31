@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: powu_v1.0.0_development
+  database: powu_v1_0_0_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: powu_v1.0.0_test
+  database: powu_v1_0_0_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: powu_v1.0.0_production
-  username: powu_v1.0.0
+  database: powu_v1_0_0_production
+  username: powu_v1_0_0
   password: <%= ENV['POWU_DATABASE_PASSWORD'] %>
