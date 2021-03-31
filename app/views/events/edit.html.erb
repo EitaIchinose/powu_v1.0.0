@@ -1,0 +1,45 @@
+<div class="event-form">
+  <div class="plan-name font-weight-bold">予定を編集</div>
+
+  <%= form_with(model: @event, url:department_event_path, local: true) do |form| %>
+    <%= render 'layouts/error_messages', model: @event %>
+
+    <div class="form-group">
+      <%= form.label :title, class:"event-title font-weight-bold" %>
+      <%= form.text_field :title, class:"form-control" %>
+    </div>
+
+    <div class="times">
+      <div class="time">
+        <%= form.label :開始, class:"time-name font-weight-bold" %>
+        <%= form.text_field :start_time, class:"flatpickr days form-control", placeholder:"select.date..."%>
+      </div>
+
+      <div class="time">
+        <%= form.label :終了, class:"time-name font-weight-bold" %>
+        <%= form.text_field :end_time, class:"flatpickr days form-control", placeholder:"select.date..." %>
+      </div>
+    </div>
+
+    <script>
+      const config_day = {
+        time_24hr: true,    // 時間24時間設定
+        enableTime: true,   // 時間の選択可否
+        minDate: "today",       // 入力範囲指定（本日以降）
+        "locale": "ja",         // 言語設定
+      }
+      flatpickr('.flatpickr', config_day);
+    </script>
+
+    <div class="content form-group">
+      <%= form.label :内容, class:"font-weight-bold" %>
+      <%= form.text_area :content, class:"form-control text-area" %>
+    </div>
+
+
+    <div class="submit">
+      <%= form.submit :編集を保存, class:"btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>

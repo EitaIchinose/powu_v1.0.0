@@ -1,0 +1,39 @@
+<div class="border-line">
+  <%= comments.count %>件のコメント...
+</div>
+<% comments.each do |comment| %>
+  <div class="comment">
+      <div class="comment-user">
+        <div class="comment-user-name">
+          <% if comment.user == current_user%>
+          <i class="fa fa-check-circle" style="color:forestgreen;"></i>
+          <% end %>
+          <%= comment.user.nickname %>
+        </div>
+        <div class="current-time">
+          <%= l comment.created_at %>
+        </div>
+        <% if comment.user == current_user%>
+          <span data-comment-id=<%= comment.id %> class="js-edit-comment-button">
+            <i class="fa fa-pencil-square-o" style="color:blue;"></i>
+          </span>
+          <%= link_to department_comment_path(comment.department_id, comment.id), method: :delete,class:"comment-destroy", remote: true do %>
+            <i class="fa fa-trash-o icon-fa" style="color:blue;"></i>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="comment-content">
+        <div id="comment-content-area-<%= comment.id %>">
+          <%= comment.text %>
+        </div>
+        <div id="js-comment-post-error-<%= comment.id %>" class="text-danger"></div>
+        <textarea style="display: none;" id="js-textarea-comment-<%= comment.id %>" class="form-control comment-post-error"><%= comment.text %></textarea>
+        <div id="js-comment-button-<%= comment.id %>" style="display: none;">
+          <button data-cancel-id=<%= comment.id %> type="button" class="btn btn-light comment-cancel-button">キャンセル</button>
+          <button data-update-id=[<%= comment.department_id %>,<%= comment.id%>] type="submit" class="btn btn-success comment-update-button">更新</button>
+        </div>
+      </div>
+      <%= image_tag comment.image.variant(resize: '500x500'), class: 'comment-image' if comment.image.attached? %>
+  </div>
+<% end %>

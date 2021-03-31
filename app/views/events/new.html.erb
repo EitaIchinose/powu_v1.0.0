@@ -1,0 +1,64 @@
+<div class="event-form">
+  <div class="plan-name font-weight-bold">新規予定追加</div>
+
+  <%= form_with model: @events, url: department_events_path, local: true do |form| %>
+    <%= render 'layouts/error_messages', model: @events %>
+
+
+    <div class="form-group">
+      <%= form.label :title, class:"event-title font-weight-bold" %>
+      <%= form.text_field :title, class:"form-control" %>
+    </div>
+
+    <div class="times">
+      <div class="time">
+        <%= form.label :開始, class:"time-name font-weight-bold" %>
+        <%= form.text_field :start_time, class:"flatpickr_start days form-control", placeholder:"select.date...", id:"start-time"%>
+      </div>
+
+      <div class="time">
+        <%= form.label :終了, class:"time-name font-weight-bold" %>
+        <%= form.text_field :end_time, class:"flatpickr days form-control", placeholder:"select.date...", id:"end-time" %>
+      </div>
+    </div>
+
+    <script>
+      const config_start = {
+        time_24hr: true,    // 時間24時間設定
+        enableTime: true,   // 時間の選択可否
+        minDate: "today",   // 入力範囲指定（本日以降）
+        "locale": "ja",     // 言語設定
+        onChange: ('#start-time', function(selectedDates, dateStr, instance) {
+          const time = instance.parseDate(selectedDates[0])
+          time.setHours(time.getHours() + 1)
+          document.getElementById('end-time').value = dateStr.replace(dateStr.slice(11,13), time.getHours())
+        })
+      }
+
+      const config_end = {
+        time_24hr: true,    // 時間24時間設定
+        enableTime: true,   // 時間の選択可否
+        minDate: "today",   // 入力範囲指定（本日以降）
+        "locale": "ja",     // 言語設定
+      }
+
+      flatpickr('.flatpickr_start', config_start);
+      flatpickr('.flatpickr', config_end);
+    </script>
+
+    <div class="content form-group">
+      <%= form.label :内容, class:"font-weight-bold" %>
+      <%= form.text_area :content, class:"form-control",style: "height: 360px" %>
+    </div>
+
+
+    <div class="submit">
+      <%= form.submit :登録,url: department_events_path, method: :post, class:"show-btn" %>
+    </div>
+
+    <div class="back">
+      <%= link_to '←戻る',  department_events_path , class: 'back-btn' %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="side-header">
+  <%= link_to current_user.nickname, edit_user_path(current_user), class:"user-name" %>
+  <%= link_to '予定表を作成する', new_department_path, class:"table-create" %>
+</div>
+
+<div class="side-main">
+    <% @departments.each do |department| %>
+      <div class="department">
+        <%= link_to department.name, department_events_path(department), class: "department-name", id:"department_name"%>
+      </div>
+    <% end %>
+</div>
+

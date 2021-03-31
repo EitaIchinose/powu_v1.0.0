@@ -1,0 +1,50 @@
+/* 全体 */
+.wrapper {
+  height: 100vh;
+  padding-top: 80px;
+  background-color: #ffffff;
+}
+
+/* トップページ */
+.box17{
+  margin: 200px auto;
+  width: 630px;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+.box17:before, .box17:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+  margin: 0; 
+  padding: 5px 0;
+  text-align: center;
+}
+
+.box-title p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+/* 歯車アニメーション */
+.rotate-anime {
+  display: inline-block;
+}
+.rotate-anime1 {
+  animation: r1 3s linear infinite;
+}
+@keyframes r1 {
+  0%  {transform: rotate(0);}
+  100%  {transform: rotate(360deg);}
+}

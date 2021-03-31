@@ -1,0 +1,46 @@
+<div class="event-main">
+  <div class="event-header">
+    <div class=event-name>
+      <%= @department.name %>
+    </div>
+    <div class="plan-create">
+      <%= link_to '予定を追加',new_department_event_path, class:"btn btn-primary active" %>
+    </div>
+  </div>
+  <%# タブ %>    
+  <div class="tab-area">
+    <div class="tab in_active">週</div>
+    <div class="tab">月</div>
+  </div>
+  <%# /タブ %>
+  <%# カレンダー%>
+  <div class="content-area">
+    <%# 週カレンダー%>
+    <div id="events_calendar_week" class="content show">
+      <%= render partial: 'week_calendar_event', locals: {events: @events, department: @department} %>
+    </div>
+    <%# /週カレンダー%>
+    <%# 月カレンダー%>
+    <div id="events_calendar" class="content">
+      <%= render partial: 'month_calendar_event', locals: {events: @events, department: @department} %>
+    </div>
+    <%# /月カレンダー%>
+  </div>
+  <%# /カレンダー%>
+  <%# コメント%>
+  <div class="comments" id="comment-area">
+    <%= render partial: 'comments/index', locals: { comments: @comments} %>
+  </div>
+  <%# /コメント%>
+</div>
+
+<%= form_with model: [@department, @comment], url: department_comments_path(@department), class: "form", id: "form", remote: true do |f| %>
+  <div class="form-comment">
+    <%= f.text_field :text, placeholder: "type a message", class: "form-input", id:"content", autocomplete: "off" %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: "hidden", id:"content-image" %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: "form-submit", id:'submit' %>
+<% end %>

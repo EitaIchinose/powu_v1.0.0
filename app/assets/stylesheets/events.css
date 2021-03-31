@@ -1,0 +1,313 @@
+/* エラー表示 */
+.error-alert ul {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.error-message {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+/* メイン・全体 */
+.event {
+  background-color: #ffffff;
+}
+
+/* メイン・ヘッダー */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-name {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  padding: 1em 4em 1em 1em;
+  -webkit-background: linear-gradient(-155deg, rgba(0, 0, 0, 0) 1.5em, #f6f6f6 0%);
+  background: linear-gradient(-155deg, rgba(0, 0, 0, 0) 1.5em, #f6f6f6 0%);
+  border-radius: 6px;
+}
+.event-name::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  width: 1.65507em;
+  height: 3.5493em;
+  background: -webkit-linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .2));
+  background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .2));
+  border-bottom-left-radius: 6px;
+  box-shadow: -.2em .2em .3em -.1em rgba(0, 0, 0, .15);
+  -webkit-transform: translateY(-1.89424em) rotate(-40deg);
+  transform: translateY(-1.89424em) rotate(-40deg);
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom right;
+}
+
+/* メイン・イベント */
+.event-main {
+  width: 100vw;
+  height: calc(100vh - 90px - 80px);
+  padding: 20px 40px 0;
+  overflow: scroll;
+}
+
+div.border-line {
+  border-bottom: 1px solid #999;
+}
+
+.comment {
+  margin-bottom: 40px;
+}
+
+.comment-user {
+  display: flex;
+  margin: 10px 0;
+}
+
+.comment-user-name {
+  color: #434A54;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.current-time {
+  color: #999;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.comment-content {
+  color: #434A54;
+  font-size: 14px;
+}
+
+.js-edit-comment-button {
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.comment-destroy {
+  margin: -4px 0 0 3px;
+}
+
+/* メイン・フォーム */
+.form {
+  height: 90px;
+  background-color: #DDDDDD;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-comment {
+  width: 100%;
+  background-color: white;
+  display: flex;
+}
+
+.form-input {
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  border: none;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-submit {
+  height: 50px;
+  padding: 0 20px;
+  color: white;
+  font-size: 16px;
+  background-color: #38AEF0;
+  border: none;
+  margin-left: 15px;
+}
+
+/* 新規予定追加画面 */
+.event-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 80px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.plan-name {
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-name {
+  letter-spacing: 2px;
+  padding-right: 15px;
+}
+
+.time select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.submit {
+  text-align: center;
+}
+
+/* 時間 */
+.times {
+  display: flex;
+  justify-content: space-around;
+}
+
+.days {
+  text-align: center;
+}
+
+/* 予定追加ボタン */
+.show-btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #1a1aff;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #1a1aff;    /* 枠の指定 */
+}
+
+.show-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #1a1aff;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+/* 詳細画面 */
+.show-table{
+  margin-top: 50px;
+}
+
+.heading {
+  letter-spacing: 2px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+#display-bottom {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.transition {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-name {
+  padding-left: 80px;
+  margin-bottom: 16px;
+}
+
+/* 編集画面へボタン */
+.edit-btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #1a1aff;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #1a1aff;    /* 枠の指定 */
+}
+
+.edit-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #1a1aff;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+/* 削除ボタン */
+.delete-btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #ff0000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #ff0000;    /* 枠の指定 */
+}
+.delete-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #ff0000;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+/* 戻るボタン */
+.back {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.back-btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #999999;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #999999;    /* 枠の指定 */
+}
+.back-btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #999999;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}

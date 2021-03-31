@@ -1,0 +1,51 @@
+/* 全体 */
+.department-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 80px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+/* /全体 */
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.department-format {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group.side {
+  margin-bottom: 50px;
+}
+
+.side {
+  display: flex;
+  align-items: center;
+}
+
+.department-form-label {
+  margin: 0 70px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+  letter-spacing: 2px;
+}
+
+.department-form_action-btn {
+  padding: 10px;
+  letter-spacing: 2px;
+  width: 60px;
+  position: absolute;
+  left: 340px;
+  top: 100px;
+}
