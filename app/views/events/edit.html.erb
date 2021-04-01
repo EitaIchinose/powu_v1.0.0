@@ -1,5 +1,5 @@
 <div class="event-form">
-  <div class="plan-name font-weight-bold">予定を編集</div>
+  <div class="plan-name font-weight-bold">編集</div>
 
   <%= form_with(model: @event, url:department_event_path, local: true) do |form| %>
     <%= render 'layouts/error_messages', model: @event %>
@@ -33,7 +33,7 @@
 
     <div class="content form-group">
       <%= form.label :内容, class:"font-weight-bold" %>
-      <%= form.text_area :content, class:"form-control text-area" %>
+      <%= form.text_area :content, class:"form-control text-area", style: "height: 360px" %>
     </div>
 
 
