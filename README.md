@@ -1,59 +1,83 @@
-# テーブル設計
+# アプリケーション名
 
-## users テーブル
+**P.O.W.U(ポウ)**
 
-| Column                | Type    | Options                   |
-| --------------------- | ------- | ------------------------- |
-| nickname              | string  | null: false               |
-| email                 | string  | null: false, unique: true |
-| encrypted_password    | string  | null: false               |
-| family_name           | string  | null: false               |
-| given_name            | string  | null: false               |
-| family_name_kana      | string  | null: false               |
-| given_name_kana       | string  | null: false               |
-| duty_station          | string  |                           |
-| birthday              | date    | null: false               |
+# 概要
 
-### Association
+カレンダーを用いて部署ごとに予定（工程）を組むことが可能となります。  
+また、各予定表ページにてコメント機能を導入しておりますので、予定を閲覧しながらの打ち合わせが可能です。  
+他部署との連携を図るため、全ユーザーが全ての予定を閲覧可能です。
 
-- has_many :events
-- has_many :comments
+# 本番環境
 
-## departments テーブル
+[P.O.W.U](https://powu-v1.herokuapp.com/)
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| name          | string     | null: false                    |
+## ログイン情報(テスト用)
 
-### Association
+- メールアドレス：test@example1
+- パスワード　　：abc123
 
-- has_many :events
-- has_many :comments
+# 制作背景（意図）
 
-## events テーブル
+私は前職・製造業で主に工程を組むことが仕事でした。組み方として、紙媒体を用いて自身でテンプレートを作成したり  
+使わなくなった書類の裏紙を再利用する形でそこに記述しまとめるといった方法です。  
+しかし、その中で業務効率化を図るため下記の事を解決したいと考えておりました。
 
-| Column           | Type        | Options                        |
-| ---------------- | ----------- | ------------------------------ |
-| title            | string      | null: false                    |
-| start_time       | datetime    | null: false                    |
-| content          | text        |                                |
-| user             | references  | null: false, foreign_key: true |
-| department       | references  | null: false, foreign_key: true |
+- 一日の予定を洗い出しまとめる作業時間を短縮化したい
+- 他部署と連携を図る時に生じる時間（打ち合わせ等）を最低限に抑えたい
+- 過去の予定を保管する事が困難であり、予定を遡りづらい
+- 予定表を作成するにも、部署ごとに作業内容も変わってくる為作成が困難  
 
-### Association
+以上のことを解決するため今回のアプリケーション実装に至りました。
 
-- belongs_to :user
-- belongs_to :department
+# DEMO
 
-## comments テーブル
+## **トップページ**
+[![Image from Gyazo](https://i.gyazo.com/b079d748b218144516bff983324105fd.png)](https://gyazo.com/b079d748b218144516bff983324105fd)
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| text          | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
-| department    | references | null: false, foreign_key: true |
+- 簡単に取り扱い方法を記載しております。
+- 左上のメニューバーから予定表のリストを確認することが出来ます。  
+- 左上の「+」ボタンから新規予定表を登録することが出来ます。
+- ユーザー名をクリックすることでマイページへ遷移することができ、情報の編集・ログアウトすることが出来ます。
 
-### Association
+## **予定表リスト画面**
+[![Image from Gyazo](https://i.gyazo.com/66db38713a00cb07bf79ab606f9d378b.gif)](https://gyazo.com/66db38713a00cb07bf79ab606f9d378b)
 
-- belongs_to :user
-- belongs_to :department
+- 登録した予定表を全ユーザーが閲覧可能でございます。
+- 予定表削除の誤作動を防ぐため、選択した予定表に対してのみリストから削除することが可能となります。
+- 非同期通信でページ遷移を行っているため、予定を確認するための時間を削減しております。
+
+## **予定表画面**
+[![Image from Gyazo](https://i.gyazo.com/7e7a131fe86230ef0c0f3d1f01262468.gif)](https://gyazo.com/7e7a131fe86230ef0c0f3d1f01262468)
+
+- 「予定を追加」ボタンから予定を新規追加する事が可能です。
+- 予定のタイトルをクリックすることで詳細ページへ遷移できますが、カーソルを合わせることで微小な詳細を確認することが出来ます。
+- 右上の「週」・「月」タブにて週別or月別カレンダーへ切り替える事が出来ます。
+
+## **コメント機能**
+[![Image from Gyazo](https://i.gyazo.com/63f8d968c70903b6942d3abadfecb311.png)](https://gyazo.com/63f8d968c70903b6942d3abadfecb311)
+
+- コメントは文面と画像を送信することが可能であり、どちらか一方のみの送信も可能です。
+- 非同期通信にて実装している為、読む込む時間が無くすぐに反映されます。
+- 自分のコメントに足して左側にチェックマークが付くようになっており、編集と削除も可能です。
+- 自身で新たなコメントを打ち込んだ場合、自動で新規コメント（最下部）までスクロールされます。
+
+## **予定追加画面**
+[![Image from Gyazo](https://i.gyazo.com/b473be9696dd69e61f5b449ae7ff644b.gif)](https://gyazo.com/b473be9696dd69e61f5b449ae7ff644b)
+
+- タイトル・時間・内容を打ち込むことが可能であり、内容は無い場合でも登録が可能です。
+- 開始時間を打ち込むことによって、終了時間も１時間後の値が自動で打ち込まれるようになっております。
+- 開始時間が終了時間よりも遅い場合はエラーを返し登録が出来ない様になっております。
+
+## **予定詳細画面**
+[![Image from Gyazo](https://i.gyazo.com/8dce33898327f693822037fc53edacae.png)](https://gyazo.com/8dce33898327f693822037fc53edacae)
+
+- 予定画面のタイトル名から詳細画面へ遷移することが出来ます。
+- 予定内容の確認・編集・削除を行なうことが可能です。
+- 内容は登録画面と同等の幅であり、長い文面に対しても登録画面で登録されたまま表示されます。
+
+## **予定編集画面**
+[![Image from Gyazo](https://i.gyazo.com/8855874cd6423518753996960239a903.png)](https://gyazo.com/8855874cd6423518753996960239a903)
+
+- 内容が打ち込まれた状態のまま予定を編集することが出来ます。
+- もしタイトルが空の状態・開始時間が終了時間よりも遅い場合はエラーが出ます。
