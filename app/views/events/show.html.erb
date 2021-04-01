@@ -31,10 +31,10 @@
       <%= safe_join(@event.content.split("\n"),tag(:br)) %>
     </div>
   <div class="transition">
-    <%= link_to '編集画面へ', edit_department_event_path(@department,@event), class: 'edit-btn' %>
-    <%= link_to '予定を削除', department_event_path(@department,@event),method: :delete, class: 'delete-btn' %>
+    <%= link_to '編集画面へ', edit_department_event_path(@department,@event), class: 'btn btn-primary' %>
+    <%= link_to '予定を削除', department_event_path(@department,@event),method: :delete, class: 'btn btn-danger' %>
   </div>
   <div class="back">
-    <%= link_to '←戻る', department_events_path , class: 'back-btn' %>
+    <%= link_to '←戻る', department_events_path , class: 'btn btn-secondary' %>
   </div>
 </div>

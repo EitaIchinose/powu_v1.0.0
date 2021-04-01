@@ -198,27 +198,12 @@ div.border-line {
 
 /* 予定追加ボタン */
 .show-btn {
-  display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #1a1aff;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #1a1aff;    /* 枠の指定 */
+  margin-top: 30px;
+  height: 45px;
+  width: 100px;
 }
 
-.show-btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #1a1aff;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
-}
-
-/* 詳細画面 */
+/* 予定詳細画面 */
 .show-table{
   margin-top: 50px;
 }
@@ -243,71 +228,16 @@ div.border-line {
   margin-bottom: 16px;
 }
 
-/* 編集画面へボタン */
+/* 予定編集画面 */
+
 .edit-btn {
-  display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #1a1aff;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #1a1aff;    /* 枠の指定 */
+  margin-top: 30px;
+  height: 45px;
+  width: 120px;
 }
 
-.edit-btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #1a1aff;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
-}
-
-/* 削除ボタン */
-.delete-btn {
-  display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #ff0000;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #ff0000;    /* 枠の指定 */
-}
-.delete-btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #ff0000;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
-}
-
-/* 戻るボタン */
+/* 戻るボタン（追加・詳細・編集） */
 .back {
+  margin-top: 30px;
   text-align: center;
-  margin-top: 50px;
-}
-
-.back-btn {
-  display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
-  background    : #999999;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #999999;    /* 枠の指定 */
-}
-.back-btn:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #999999;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
 }
