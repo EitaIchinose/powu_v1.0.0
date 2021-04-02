@@ -142,8 +142,6 @@
   display: contents;
 }
 
-/* /生年月日 */
-
 /* お名前 */
 .input-name-wrap {
   display: flex;
@@ -163,4 +161,3 @@
   font-size: 14px;
   resize: none;
 }
-/* /お名前 */
