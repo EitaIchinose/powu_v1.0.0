@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+
+  require 'happybirthday'
+
+  def index
+    @events = current_user.events.order(:department_id)
+    birthday = Happybirthday.born_on(current_user.birthday)
+    @birthday = birthday.age.years_old
+  end
+
   def edit
   end
 
