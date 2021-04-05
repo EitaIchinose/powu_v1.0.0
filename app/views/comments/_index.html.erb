@@ -8,7 +8,7 @@
           <% if comment.user == current_user%>
           <i class="fa fa-check-circle" style="color:forestgreen;"></i>
           <% end %>
-          <%= comment.user.nickname %>
+          <%= link_to comment.user.nickname, user_path(comment.user.id), id:"comment_user_name" %>
         </div>
         <div class="current-time">
           <%= l comment.created_at %>

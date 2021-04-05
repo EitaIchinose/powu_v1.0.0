@@ -71,9 +71,12 @@ div.border-line {
 }
 
 .comment-user-name {
-  color: #434A54;
-  font-size: 16px;
   padding-right: 10px;
+}
+
+#comment_user_name {
+  font-size: 16px;
+  color: #434A54;
 }
 
 .current-time {
@@ -211,6 +214,10 @@ div.border-line {
 .heading {
   letter-spacing: 2px;
   border-bottom: 1px solid #dee2e6;
+}
+
+.show-user-nickname {
+  color: #434A54;
 }
 
 #display-bottom {
