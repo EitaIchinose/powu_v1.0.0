@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   def index
     @departments = Department.all
     @events = Event.all
-    gon.event = @events
+    gon.event = @events.as_json(:include => [:user])           # js用の変数
   end
 
   def new
