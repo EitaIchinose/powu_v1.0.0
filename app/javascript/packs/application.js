@@ -12,10 +12,6 @@ require("../balloon")
 require("../comment")
 require('../ajax_event')
 
-// require('../tab')          //非同期通信を使用しない場合、単体で呼び出す
-// require('../plan_balloon') //非同期通信を使用しない場合、単体で呼び出す
-
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

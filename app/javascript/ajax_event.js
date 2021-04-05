@@ -37,7 +37,7 @@ $(function(){
 						dataType: 'html',
 			}).done(function(data){      // 処理が成功した場合
 				$content.html($(data).find(".event").html()).fadeIn(600);
-				
+
 				// カレンダー予定の吹き出し機能
 				$.each(gon.event, function(index,value) {
 					var startTime = new Date(value.start_time)
