@@ -27,7 +27,7 @@
           生年月日...
         </div>
         <div class="profile-content">
-          <%= current_user.birthday%>
+          <%= current_user.birthday.strftime("%Y年%m月%d日")%>  (<%= @birthday %>歳)
         </div>
       </div>
       <div class="profile-container">
@@ -61,14 +61,12 @@
   </thead>
   <tbody>
     <% @events.each_with_index do |event,n|%>
-      <% if current_user.present?%>
         <tr>
           <th scope="row"><%= n + 1 %></th>
           <td id="department-name-js"><%= event.department.name%></td>
           <td><%= event.title%></td>
           <td><%= event.start_time.strftime("%Y年%m月%d日 %H:%M")%></td>
         </tr>
-      <% end%>
     <% end%>
   </tbody>
 </table>
