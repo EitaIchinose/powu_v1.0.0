@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "departments#index"
-  resources :users,  only: [:index, :edit, :update]
+  resources :users,  only: [:index, :show, :edit, :update]
   resources :departments, only: [:new, :create, :destroy] do
     resources :events
     resources :comments, only: [:create, :update, :destroy]

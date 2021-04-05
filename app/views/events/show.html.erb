@@ -5,7 +5,7 @@
       <tr>
         <th></th>
         <th class="font-weight-bold heading">予定者</th>
-        <th><%= @event.user.nickname %></th>
+        <th><%=link_to @event.user.nickname , user_path(@event.user.id), class:"show-user-nickname" %></th>
       </tr>
     </thead>
     <tbody>

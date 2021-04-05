@@ -8,6 +8,13 @@ class UsersController < ApplicationController
     @birthday = birthday.age.years_old
   end
 
+  def show
+    @user = User.find(params[:id])
+    @events = @user.events.order(:department_id)
+    birthday = Happybirthday.born_on(@user.birthday)
+    @birthday = birthday.age.years_old
+  end
+
   def edit
   end
 

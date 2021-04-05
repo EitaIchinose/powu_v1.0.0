@@ -6,10 +6,7 @@
       </div>
       <div class="account">
         <div class="user-name">
-          <%= current_user.nickname%>
-        </div>
-        <div class="account-edit">
-        <%= link_to 'アカウントの編集', edit_user_path(current_user), class:"btn btn-outline-success"%>
+          <%= @user.nickname%>
         </div>
       </div>
     </div>
@@ -19,7 +16,7 @@
           名前...
         </div>
         <div class="profile-content">
-          <%=current_user.family_name%><%= current_user.given_name%>
+          <%= @user.family_name%><%= @user.given_name%>
         </div>
       </div>
       <div class="profile-container">
@@ -27,7 +24,7 @@
           生年月日...
         </div>
         <div class="profile-content">
-          <%= current_user.birthday.strftime("%Y年%m月%d日")%>  (<%= @birthday %>歳)
+          <%= @user.birthday.strftime("%Y年%m月%d日")%>  (<%= @birthday %>歳)
         </div>
       </div>
       <div class="profile-container">
@@ -35,11 +32,11 @@
           部署・所属...
         </div>
         <div class="profile-content">
-          <%= current_user.duty_station%>
+          <%= @user.duty_station%>
         </div>
       </div>
       <div class="back left">
-        <%= link_to '←トップページへ', '/' , class: 'btn btn-secondary' %>
+        <%= link_to '←戻る', :back , class: 'btn btn-secondary' %>
       </div>
     </div>
   </div>
