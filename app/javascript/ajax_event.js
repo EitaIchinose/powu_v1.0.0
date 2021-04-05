@@ -46,7 +46,8 @@ $(function(){
 					<div>
 						<div style="margin: 10px;">
 							<div>
-							  予定：${value.title}<br>
+								予定者：${value.user.nickname}<br>
+								予定：${value.title}<br>
 								開始：${moment(startTime).format('YYYY-MM-DD HH:mm')}<br>
 								終了：${moment(endTime).format('YYYY-MM-DD HH:mm')}<br>
 							</div>

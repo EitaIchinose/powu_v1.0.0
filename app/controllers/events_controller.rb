@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @events = Department.find(params[:department_id]).events  # 予定表に関連のある予定だけを抽出
     @comment = Comment.new
     @comments = @department.comments.includes(:user)          # 予定表に関連づいたコメントのみを取得
-    gon.event = @events                                       # js用の変数
+    gon.event = @events.as_json(:includ => [:user])                                       # js用の変数
   end
 
   def new
