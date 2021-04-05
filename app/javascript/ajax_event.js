@@ -23,6 +23,7 @@ $(function(){
 			});
 			//今のリンク先を保存
 			lastpage = link;
+			history.pushState(null, null, lastpage);  // url更新
 		}
 		
 	});
