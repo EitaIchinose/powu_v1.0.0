@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @events = Event.order(:department_id)
+  end
+
   def edit
   end
 

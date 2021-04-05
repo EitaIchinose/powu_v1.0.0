@@ -39,6 +39,6 @@ $(".openbtn1").on('click', function () {    //ボタンがクリックされた�
 
 <div class="navbar navbar-light bg-light">
   <span class="navbar-text">
-    ユーザー : <%= link_to current_user.nickname, edit_user_path(current_user) %>
+    ユーザー : <%= link_to current_user.nickname, users_path(current_user) %>
   </span>
 </div>
