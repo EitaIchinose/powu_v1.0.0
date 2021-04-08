@@ -111,3 +111,22 @@ RSpec.describe 'ユーザーログイン機能', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザーログアウト機能', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  it "アカウント編集ページからログアウトボタンを押したらログアウト出来る" do
+    # サインインする
+    sign_in(@user)
+    # ユーザー名をクリックして、マイページへ遷移する
+    find("a[href='#{users_path(@user.id)}']").click
+    # アカウントの編集ボタンを押してアカウント編集画面へ遷移する
+    find("a[href='#{edit_user_path(@user.id)}']").click
+    # ログアウトボタンを押す
+    find("a[href='#{destroy_user_session_path}']").click
+    # ログインページへ遷移することを確認
+    expect(current_path).to eq new_user_session_path
+  end
+end
