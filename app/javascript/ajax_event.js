@@ -30,6 +30,12 @@ $(function(){
 	//初期設定
 	getPage(lastpage);
   var lastpage = location.href;
+
+	// ローディング画面設定
+	$(document).ajaxSend(function() {
+    $("#overlay").fadeIn(300);
+  });
+
 	//ページを取得してくる
     function getPage(elm){
     	$.ajax({
@@ -37,6 +43,9 @@ $(function(){
             url: elm,
 						dataType: 'html',
 			}).done(function(data){      // 処理が成功した場合
+				setTimeout(function(){
+					$("#overlay").fadeOut(300);  // ローディング画面設定
+				},500)
 				$content.html($(data).find(".event").html()).fadeIn(600);
 
 				// カレンダー予定の吹き出し機能
