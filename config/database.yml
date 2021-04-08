@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: powu_v1_0_0_production
-  username: powu_v1_0_0
-  password: <%= ENV['POWU_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
