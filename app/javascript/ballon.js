@@ -1,5 +1,5 @@
 // 吹き出し機能
-$(window).on('load',function() {
+$(function() {
   var tooltipHtml = `
   <div>
     <div style="margin: 10px;">
