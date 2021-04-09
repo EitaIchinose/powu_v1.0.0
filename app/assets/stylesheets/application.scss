@@ -11,15 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require user
+ *= require nav
  *= require department/department.index
+ *= require department/department.new
+ *= require events
  *= require simple_calendar
+ *= require reset
  */
  @import "bootstrap";
- @import "nav.css";
- @import "department/department.new.css";
- @import "events.css";
- @import "simple_calendar.scss";
- @import "reset.css";
 
 
  * {
