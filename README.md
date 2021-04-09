@@ -10,7 +10,7 @@
 
 # 本番環境
 
-[P.O.W.U](https://powu-v1.herokuapp.com/)
+[P.O.W.U](http://13.230.46.173/)
 
 ## ログイン情報(テスト用)
 
@@ -122,16 +122,22 @@ Ruby, Ruby on Rails
 HTML,CSS,JavaScript, jQuery, Ajax
 
 ## データベース
-MySQL
+MySQL,SequelPro
+
+## インフラ
+AWS(EC2),Capistrano
 
 ## Webサーバ（本番環境）
-Heroku
+nginx
+
+## アプリケーションサーバ（本番環境）
+unicorn
 
 ## ソース管理
 GitHub,GitHubDesktop
 
 ## テスト
-RSpec
+RSpec,Capybara
 
 ## エディタ
 VScode
