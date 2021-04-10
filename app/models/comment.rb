@@ -6,6 +6,6 @@ class Comment < ApplicationRecord
   validates :text, presence: true, unless: :was_attached?
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 end

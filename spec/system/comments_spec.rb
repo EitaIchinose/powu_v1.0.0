@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "コメント機能", type: :system do
+RSpec.describe 'コメント機能', type: :system do
   before do
     @comment = FactoryBot.create(:comment)
   end
@@ -10,15 +10,15 @@ RSpec.describe "コメント機能", type: :system do
       # サインインする
       sign_in(@comment.user)
       # 予定リストを開く
-      find(".openbtn1").click
+      find('.openbtn1').click
       # 予定表をクリック
-      find(".department-name").click
+      find('.department-name').click
       # DBに保存されていないことを確認する
-      expect {
+      expect do
         find('input[name="commit"]').click
-      }.not_to change { Comment.count}
+      end.not_to change { Comment.count }
       # エラーダイアログが表示される
-      expect(page.accept_confirm).to eq'Error： コメントに何も入力されていません'
+      expect(page.accept_confirm).to eq 'Error： コメントに何も入力されていません'
     end
   end
 
@@ -27,14 +27,14 @@ RSpec.describe "コメント機能", type: :system do
       # サインインする
       sign_in(@comment.user)
       # 予定リストを開く
-      find(".openbtn1").click
+      find('.openbtn1').click
       # 予定表をクリック
-      find(".department-name").click
+      find('.department-name').click
       # 値をテキストフォームに入力する
       wait_for_ajax
       fill_in 'comment[text]', with: @comment.text
       # コメントを投稿する
-        find('input[name="commit"]').click
+      find('input[name="commit"]').click
       # 送信した値がブラウザに表示されていることを確認する
       expect(page).to have_content(@comment.text)
     end
@@ -43,9 +43,9 @@ RSpec.describe "コメント機能", type: :system do
       # サインインする
       sign_in(@comment.user)
       # 予定リストを開く
-      find(".openbtn1").click
+      find('.openbtn1').click
       # 予定表をクリック
-      find(".department-name").click
+      find('.department-name').click
       # 添付する画像を定義する
       wait_for_ajax
       image_path = Rails.root.join('public/images/test_image.png')
@@ -61,9 +61,9 @@ RSpec.describe "コメント機能", type: :system do
       # サインインする
       sign_in(@comment.user)
       # 予定リストを開く
-      find(".openbtn1").click
+      find('.openbtn1').click
       # 予定表をクリック
-      find(".department-name").click
+      find('.department-name').click
       # 添付する画像を定義する
       wait_for_ajax
       image_path = Rails.root.join('public/images/test_image.png')
@@ -72,7 +72,7 @@ RSpec.describe "コメント機能", type: :system do
       # 値をテキストフォームに入力する
       fill_in 'comment[text]', with: @comment.text
       # コメントを投稿する
-        find('input[name="commit"]').click
+      find('input[name="commit"]').click
       # 送信した値がブラウザに表示されていることを確認する
       expect(page).to have_content(@comment.text)
       # 送信した画像がブラウザに表示されていることを確認する

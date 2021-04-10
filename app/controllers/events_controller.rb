@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @events = Department.find(params[:department_id]).events  # 予定表に関連のある予定だけを抽出
     @comment = Comment.new
     @comments = @department.comments.includes(:user)          # 予定表に関連づいたコメントのみを取得
-    gon.event = @events.as_json(:include => [:user])           # js用の変数
+    gon.event = @events.as_json(include: [:user]) # js用の変数
   end
 
   def new
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-       redirect_index
+      redirect_index
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :content, :start_time, :end_time, :id).merge(user_id: current_user.id,
-                                                                       department_id: params[:department_id])
+                                                                                       department_id: params[:department_id])
   end
 
   def set_event

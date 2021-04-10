@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   require 'happybirthday'
 
   def index

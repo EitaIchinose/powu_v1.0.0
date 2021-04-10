@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @department = Department.find(params[:department_id])
     @comment = @department.comments.build(comment_params)
     if @comment.save
-       render :index
+      render :index
     else
       render :error
     end

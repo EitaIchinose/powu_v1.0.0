@@ -33,13 +33,13 @@ RSpec.describe Comment, type: :model do
       it 'departmentが紐付いていないと、送信できない' do
         @comment.department = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Departmentを入力してください")
+        expect(@comment.errors.full_messages).to include('Departmentを入力してください')
       end
 
       it 'userが紐付いていないと、送信できない' do
         @comment.user = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Userを入力してください")
+        expect(@comment.errors.full_messages).to include('Userを入力してください')
       end
     end
   end
