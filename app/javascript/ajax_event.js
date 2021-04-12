@@ -25,17 +25,12 @@ $(function(){
 			lastpage = link;
 			history.pushState(null, null, lastpage);  // url更新
 
-			// ローディング画面設定
-			setTimeout(function(){
-				$("#overlay").fadeIn(300);
-			},500)
 		}
 		
 	});
 	//初期設定
 	getPage(lastpage);
   var lastpage = location.href;
-
 
 	//ページを取得してくる
     function getPage(elm){
@@ -44,8 +39,12 @@ $(function(){
             url: elm,
 						dataType: 'html',
 			}).done(function(data){      // 処理が成功した場合
+				// ローディング画面設定
+				$(document).on('click','.department-name',  () => {
+					$("#overlay").fadeIn(300);
+				})
 				setTimeout(function(){
-					$("#overlay").fadeOut(300);  // ローディング画面設定
+					$("#overlay").fadeOut(300);
 				},500)
 				$content.html($(data).find(".event").html()).fadeIn(600);
 
