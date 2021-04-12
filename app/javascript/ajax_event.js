@@ -24,6 +24,11 @@ $(function(){
 			//今のリンク先を保存
 			lastpage = link;
 			history.pushState(null, null, lastpage);  // url更新
+
+			// ローディング画面設定
+			setTimeout(function(){
+				$("#overlay").fadeIn(300);
+			},500)
 		}
 		
 	});
@@ -31,10 +36,6 @@ $(function(){
 	getPage(lastpage);
   var lastpage = location.href;
 
-	// ローディング画面設定
-	$(document).ajaxSend(function() {
-    $("#overlay").fadeIn(300);
-  });
 
 	//ページを取得してくる
     function getPage(elm){

@@ -32,7 +32,6 @@ $(function(){
 $(function(){
   $(document).on('click', ".comment-update-button", function(){
     const Id = $(this).data('update-id');                        //[0]department.id、[1]comment.id
-    const departmentId = $(this).data('')
     const textField = $('#js-textarea-comment-' + Id[1]);        //一意のコメントエリアを代入
     const text = textField.val();                                //更新するコメント内容を取得
 
