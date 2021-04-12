@@ -6,7 +6,9 @@ $(function(){
 	//ボタンをクリックした時の処理
 	$(document).on('click', '.department-name', function(event) {
 		event.preventDefault();
-		$("#overlay").fadeIn(300);
+		$(function(){
+			$("#overlay").fadeIn(300);
+		})
 
 		// カレンダー削除機能
 		const department_name = $(".department-name"); // department-nameのクラスを全て取得
