@@ -6,6 +6,7 @@ $(function(){
 	//ボタンをクリックした時の処理
 	$(document).on('click', '.department-name', function(event) {
 		event.preventDefault();
+		$("#overlay").fadeIn(300);
 
 		// カレンダー削除機能
 		const department_name = $(".department-name"); // department-nameのクラスを全て取得
@@ -39,10 +40,6 @@ $(function(){
             url: elm,
 						dataType: 'html',
 			}).done(function(data){      // 処理が成功した場合
-				// ローディング画面設定
-				$(document).on('click','.department-name',  () => {
-					$("#overlay").fadeIn(300);
-				})
 				setTimeout(function(){
 					$("#overlay").fadeOut(300);
 				},500)
