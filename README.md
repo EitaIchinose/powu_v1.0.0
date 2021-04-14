@@ -58,7 +58,7 @@
 - こちらのページからログアウトすることが可能となります。
 
 ## **予定表リスト画面**
-[![Image from Gyazo](https://i.gyazo.com/66db38713a00cb07bf79ab606f9d378b.gif)](https://gyazo.com/66db38713a00cb07bf79ab606f9d378b)
+[![Image from Gyazo](https://i.gyazo.com/a69411faf8e60d3b6143a1cea869e589.gif)](https://gyazo.com/a69411faf8e60d3b6143a1cea869e589)
 
 - 登録した予定表を全ユーザーが閲覧可能でございます。
 - 予定表削除の誤作動を防ぐため、選択した予定表に対してのみリストから削除することが可能となります。
