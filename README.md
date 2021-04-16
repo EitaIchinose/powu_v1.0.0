@@ -65,7 +65,7 @@
 - 非同期通信でページ遷移を行っているため、予定を確認するための時間を削減しております。
 
 ## **予定表画面**
-[![Image from Gyazo](https://i.gyazo.com/88e9b2309f4ceac2a6ff75766f899fd9.gif)](https://gyazo.com/88e9b2309f4ceac2a6ff75766f899fd9)
+[![Image from Gyazo](https://i.gyazo.com/b544df653f658084689abd45906e18b0.gif)](https://gyazo.com/b544df653f658084689abd45906e18b0)
 
 - 「予定を追加」ボタンから予定を新規追加する事が可能です。
 - 予定のタイトルを長い文面で書いた場合、後ろの文字列が「...」に省略される様になっております。
@@ -73,7 +73,7 @@
 - 右上の「週」・「月」タブにて週別or月別カレンダーへ切り替える事が出来ます。
 
 ## **コメント機能**
-[![Image from Gyazo](https://i.gyazo.com/63f8d968c70903b6942d3abadfecb311.png)](https://gyazo.com/63f8d968c70903b6942d3abadfecb311)
+[![Image from Gyazo](https://i.gyazo.com/06c77c90d0c3aaa68bc2693e7be2ae4b.gif)](https://gyazo.com/06c77c90d0c3aaa68bc2693e7be2ae4b)
 
 - コメントは文面と画像を送信することが可能であり、どちらか一方のみの送信も可能です。
 - 非同期通信にて実装している為、読む込む時間が無くすぐに反映されます。
@@ -82,14 +82,14 @@
 - コメントされたユーザー名をクリックすることで、ユーザーの詳細ページに遷移します。
 
 ## **予定追加画面**
-[![Image from Gyazo](https://i.gyazo.com/b686aeafb274aaaa2cec13c92b08467e.gif)](https://gyazo.com/b686aeafb274aaaa2cec13c92b08467e)
+[![Image from Gyazo](https://i.gyazo.com/887240e90a02a1ef16bba8d082f45e63.gif)](https://gyazo.com/887240e90a02a1ef16bba8d082f45e63)
 
 - タイトル・時間・内容を打ち込むことが可能であり、内容は無い場合でも登録が可能です。
 - 開始時間を打ち込むことによって、終了時間も１時間後の値が自動で打ち込まれるようになっております。
 - 開始時間が終了時間よりも遅い場合はエラーを返し登録が出来ない様になっております。
 
 ## **予定詳細画面**
-[![Image from Gyazo](https://i.gyazo.com/a11cbea19cfdbc31763d8c069617d2eb.png)](https://gyazo.com/a11cbea19cfdbc31763d8c069617d2eb)
+[![Image from Gyazo](https://i.gyazo.com/0b2b4a3dee11acffb6ee402ca16612dd.png)](https://gyazo.com/0b2b4a3dee11acffb6ee402ca16612dd)
 
 - 予定内容の確認・編集・削除を行なうことが可能です。
 - 内容は登録画面と同等の幅であり、長い文面に対しても登録画面で登録されたまま表示されます。
