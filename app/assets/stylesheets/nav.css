@@ -1,5 +1,4 @@
 /* ナビゲーション */
-
 nav.navbar.bg-light {
   padding-left: 60px;
 }
@@ -72,6 +71,7 @@ ui-tooltip {
   letter-spacing: 0.1em;
   font-weight: bold;
 }
+
 /*========= ボタンのためのCSS ===============*/
 .openbtn1{
   position:fixed;
@@ -93,24 +93,30 @@ ui-tooltip {
   background-color: #666;
   width: 45%;
 }
+
 .openbtn1 span:nth-of-type(1) {
   top:15px; 
 }
+
 .openbtn1 span:nth-of-type(2) {
   top:23px;
 }
+
 .openbtn1 span:nth-of-type(3) {
   top:31px;
 }
+
 .openbtn1.active span:nth-of-type(1) {
   top: 18px;
   left: 18px;
   transform: translateY(6px) rotate(-45deg);
   width: 30%;
 }
+
 .openbtn1.active span:nth-of-type(2) {
   opacity: 0;
 }
+
 .openbtn1.active span:nth-of-type(3){
   top: 30px;
   left: 18px;
