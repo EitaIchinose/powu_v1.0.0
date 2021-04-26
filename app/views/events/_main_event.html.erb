@@ -37,7 +37,7 @@
 <%= form_with model: [@department, @comment], url: department_comments_path(@department), class: "form", id: "form", remote: true do |f| %>
   <div class="form-comment">
     <%= f.text_field :text, placeholder: "type a message", class: "form-input", id:"content", autocomplete: "off" %>
-    <label class="form-image">
+    <label class="form-image btn-secondary">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: "hidden", id:"content-image" %>
     </label>
